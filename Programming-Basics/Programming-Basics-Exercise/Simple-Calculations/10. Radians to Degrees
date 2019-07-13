@@ -1,0 +1,14 @@
+using System;
+
+namespace RadiansToDegrees
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double angleRad = double.Parse(Console.ReadLine());
+            double angleDeg = angleRad * 57.29578;
+            Console.WriteLine($"{angleDeg:F0}");
+        }
+    }
+}

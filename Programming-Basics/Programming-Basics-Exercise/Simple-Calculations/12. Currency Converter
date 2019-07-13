@@ -1,0 +1,53 @@
+using System;
+
+namespace CurrencyConverter
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var value = double.Parse(Console.ReadLine());
+            var input = Console.ReadLine();
+            var output = Console.ReadLine();
+            double bgn = 1.0;
+            double usd = 1.79549;
+            double eur = 1.95583;
+            double gbp = 2.53405;
+            switch (input)
+            {
+                case "BGN":
+                    break;
+                case "USD":
+                    value = value * usd;
+                    break;
+                case "EUR":
+                    value = value * eur;
+                    break;
+                case "GBP":
+                    value = value * gbp;
+                    break;
+                default:
+                    break;
+            }
+            switch (output)
+            {
+                case "BGN":
+                    value = value / bgn;
+                    break;
+                case "USD":
+                    value = value / usd;
+                    break;
+                case "EUR":
+                    value = value / eur;
+                    break;
+                case "GBP":
+                    value = value / gbp;
+                    break;
+                default:
+                    break;
+            }
+            Console.WriteLine($"{value:F2}" + " " + output);
+
+        }
+    }
+}

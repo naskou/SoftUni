@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+
+namespace MetricConverter
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double fromMetric = double.Parse(Console.ReadLine());
+            string from = Console.ReadLine();
+            string to = Console.ReadLine();
+
+            var currecies = new Dictionary<string, double>()
+            {
+                {"m", 1.0 },
+                {"mm", 1000.0 },
+                {"cm", 100 },
+                {"mi", 0.000621371192},
+                {"in", 39.3700787},
+                {"km", 0.001},
+                {"ft", 3.2808399},
+                {"yd", 1.0936133}
+            };
+            double result = fromMetric / currecies[from] * currecies[to];
+            Console.WriteLine($"{result:F8}");
+        }
+    }
+}

@@ -1,0 +1,12 @@
+using System;
+using System.Globalization;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string birth = Console.ReadLine();
+        DateTime result = DateTime.ParseExact(birth, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+        Console.WriteLine(result.AddDays(999).ToString("dd-MM-yyyy"));
+    }
+}

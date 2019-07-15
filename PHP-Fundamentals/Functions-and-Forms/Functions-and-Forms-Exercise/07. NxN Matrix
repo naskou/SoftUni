@@ -1,0 +1,10 @@
+<?php
+
+    $size = intval(readline());
+
+    for ($i = 0; $i < $size; $i++) {
+        for ($j = 0; $j < $size; $j++) {
+            echo $size . ' ';
+        }
+        echo PHP_EOL;
+    }

@@ -1,0 +1,13 @@
+<?php
+$hours = readline();
+$minutes = readline() + 30;
+if ($minutes > 59)
+{
+    $minutes -= 60;
+    $hours ++;
+}
+if ($hours > 23)
+{
+    $hours = 0;
+}
+printf('%2d:%02d', $hours, $minutes);

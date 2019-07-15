@@ -1,0 +1,7 @@
+<?php
+
+$a = intval(readline());
+$b = intval(readline());
+
+echo "Before:\na = $a\nb = $b\n";
+echo "After:\na = $b\nb = $a\n";

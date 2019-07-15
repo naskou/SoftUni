@@ -1,0 +1,17 @@
+<?php
+
+    $numbers = array_map('floatval', explode(' ', readline()));
+
+    for ($i = 0; $i < count($numbers) - 1; $i++) {
+
+        $current = $numbers[$i];
+        $next = $numbers[$i + 1];
+
+        if ($current === $next) {
+            $sum = $current + $next;
+            $numbers[$i] = $sum;
+            array_splice($numbers, $i + 1, 1);
+            $i = -1;
+        }
+    }
+    echo implode(' ', $numbers);

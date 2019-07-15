@@ -1,0 +1,21 @@
+<?php
+
+    $grade = floatval(readline());
+
+    printInWords($grade);
+
+    function printInWords($grade) {
+
+        if ($grade >= 2 && $grade < 3) {
+            $word = 'Fail';
+        } else if ($grade >= 3 && $grade < 3.5) {
+            $word = 'Poor';
+        } else if ($grade >= 3.5 && $grade < 4.5) {
+            $word = 'Good';
+        } else if ($grade >= 4.5 && $grade < 5.5) {
+            $word = 'Very good';
+        } else if ($grade >= 5.5 && $grade < 6) {
+            $word = 'Excellent';
+        }
+        echo $word;
+    }

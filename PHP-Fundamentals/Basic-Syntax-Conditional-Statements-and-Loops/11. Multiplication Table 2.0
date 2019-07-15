@@ -1,0 +1,8 @@
+<?php
+$number = intval(readline());
+$multiplier = intval(readline());
+do {
+    echo $number.' X '.$multiplier.' = '.$number * $multiplier.PHP_EOL;
+    $multiplier++;
+}
+while ($multiplier <= 10);

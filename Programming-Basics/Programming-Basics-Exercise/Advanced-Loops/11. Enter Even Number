@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EnterEvenNum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num = int.Parse(Console.ReadLine());
+
+            while (true)
+            {
+                if (num % 2 == 0)
+                {
+                    Console.WriteLine("Even number entered: "+ num);
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Enter even number: ");
+                    num = int.Parse(Console.ReadLine());
+                }
+            }
+        }
+    }
+}

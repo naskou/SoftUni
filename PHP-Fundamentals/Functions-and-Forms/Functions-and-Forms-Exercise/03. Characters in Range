@@ -1,0 +1,21 @@
+<?php
+
+    $first = readline();
+    $second = readline();
+
+    $start = ord($first);
+    $end = ord($second);
+
+    if ($start > $end) {
+        $end = $start;
+        $start = ord($second);
+    }
+
+    printInRange($start, $end);
+
+    function printInRange(int $start, int $end): void
+    {
+        for ($i = $start + 1 ; $i < $end; $i++) {
+            echo chr($i) . " ";
+        }
+    }

@@ -1,0 +1,21 @@
+<?php
+
+    $numbers = array_map('intval', explode(" ", readline()));
+    $position = count($numbers);
+
+    $diffEven = 0;
+    $diffOdd = 0;
+
+    for ($i = 0; $i < $position; $i++) {
+        if ($numbers[$i] % 2 == 0) {
+            $diffEven += $numbers[$i];
+        }
+    }
+
+    for ($i = 0; $i < $position; $i++) {
+        if ($numbers[$i] % 2 != 0) {
+            $diffOdd += $numbers[$i];
+        }
+    }
+
+    echo $diffEven - $diffOdd;

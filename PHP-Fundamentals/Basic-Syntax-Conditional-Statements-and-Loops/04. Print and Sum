@@ -1,0 +1,10 @@
+<?php
+$startNumber = intval(readline());
+$endNumber = intval(readline());
+$sum = 0;
+for ($i = $startNumber; $i <= $endNumber; $i++){
+    echo $i.' ';
+    $sum += $i;
+}
+echo PHP_EOL;
+printf("Sum: $sum");

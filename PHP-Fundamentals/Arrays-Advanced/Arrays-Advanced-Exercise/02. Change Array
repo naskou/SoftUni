@@ -1,0 +1,43 @@
+<?php
+
+    $arr = array_map('intval', explode(' ', readline()));
+    $even = [];
+    $odd = [];
+    $isOdd = false;
+
+    while (1) {
+        $input = explode(' ', readline());
+
+        if ($input[0] == 'Odd') {
+            $isOdd = true;
+            break;
+        } else if ($input[0] == 'Even') {
+            break;
+        }
+
+        if ($input[0] == 'Delete') {
+            for ($i = 0; $i < count($arr); $i++) {
+                if ($arr[$i] == $input[1]) {
+                    unset($arr[$i]);
+                }
+            }
+        } else if ($input[0] == 'Insert') {
+            $element = $input[1];
+            $index = $input[2];
+            array_splice($arr, $index, 0, $element);
+        }
+        $arr = array_values($arr);
+    }
+
+    for ($i = 0; $i < count($arr); $i++) {
+        if ($arr[$i] % 2 === 0) {
+            $even[] = $arr[$i];
+        } else {
+            array_push($odd, $arr[$i]);
+        }
+    }
+    if ($isOdd) {
+        echo implode(' ', $odd);
+    } else {
+        echo implode(' ', $even);
+    }

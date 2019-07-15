@@ -1,0 +1,29 @@
+<?php
+
+$num = intval(readline());
+
+$topNums = findTopNumber($num);
+echo $topNums;
+
+function findTopNumber(int $n)
+{
+    $result = [];
+    for ($i = 1; $i <= $n; $i++) {
+        $isOdd = false;
+        $sum = 0;
+        $numberAsString = strval($i);
+
+        for ($k = 0; $k < strlen($numberAsString); $k++){
+            $digit = intval($numberAsString[$k]);
+            $sum += $digit;
+            if ($digit % 2 === 1){
+                $isOdd = true;
+            }
+        }
+        if ($sum % 8 === 0 && $isOdd) {
+            $result[] = $i;
+        }
+    }
+    $result = implode(" " . PHP_EOL, $result);
+    return $result;
+}

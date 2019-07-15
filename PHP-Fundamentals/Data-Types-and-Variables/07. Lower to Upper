@@ -1,0 +1,9 @@
+<?php
+
+$character = readline();
+
+if ((ord($character)) >= 97 && (ord($character)) <= 122) {
+    echo 'lower-case';
+} else if ((ord($character)) >= 65 && (ord($character)) <= 90) {
+    echo 'upper-case';
+}

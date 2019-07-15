@@ -1,0 +1,19 @@
+<?php
+    $passed = 0;
+    $array = array_map('intval', explode(' ', readline()));
+    $sum = array_sum($array);
+    $found = false;
+    $index = 0;
+    foreach ($array as $item) {
+        if ($sum - $item - $passed == $passed) {
+            $found = true;
+            break;
+        }
+        ++$index;
+        $passed += $item;
+    }
+    if($found) {
+        echo $index;
+    } else {
+        echo 'no';
+    }

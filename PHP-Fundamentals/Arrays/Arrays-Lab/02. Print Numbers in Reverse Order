@@ -1,0 +1,9 @@
+<?php
+    $input = intval(readline());
+    $memory = [];
+
+    for ($i = 0; $i < $input; $i++) {
+        $number = readline();
+        $memory[] = $number;
+    }
+    echo implode(' ', array_reverse($memory));

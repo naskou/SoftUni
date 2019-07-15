@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace House
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int stars;
+            if (n % 2 == 0)
+            {
+                stars = 2;
+            }
+            else
+            {
+                stars = 1;
+            }
+            int dashes = (n - stars) / 2;
+            Console.Write(new string('-', dashes));
+            Console.Write(new string('*', stars));
+            Console.WriteLine(new string('-', dashes));
+            for (int roof = 1; roof < (n + 1) / 2; roof++)
+            {
+                stars = stars + 2;
+                dashes = dashes - 1;
+                Console.Write(new string('-', dashes));
+                Console.Write(new string('*', stars));
+                Console.WriteLine(new string('-', dashes));
+            }
+            for (int body = 0; body <= n / 2 -1; body++)
+            {
+                Console.Write('|');
+                Console.Write(new string('*', n - 2));
+                Console.WriteLine('|');
+            }
+        }
+    }
+}

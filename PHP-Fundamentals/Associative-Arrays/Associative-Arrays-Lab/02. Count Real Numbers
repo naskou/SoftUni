@@ -1,0 +1,17 @@
+<?php
+
+    $input = explode(' ', readline());
+    $arr = [];
+    
+    for ($i = 0; $i < count($input); $i++) {
+        $number = $input[$i];
+        if (!key_exists($number, $arr)) {
+            $arr[$number] = 1;
+        } else {
+            $arr[$number]++;
+        }
+    }
+    ksort($arr);
+    foreach ($arr as $key => $value) {
+            echo $key . ' -> ' . $value . PHP_EOL;
+    }

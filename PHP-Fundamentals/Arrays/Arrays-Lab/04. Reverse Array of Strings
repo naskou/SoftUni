@@ -1,0 +1,12 @@
+<?php
+    $elements = explode(" ", readline());
+    $lastPosition = count($elements) - 1;
+
+    for ($i = 0; $i < intval(count($elements) / 2); $i++) {
+        $left = $elements[$i];
+        $right = $elements[$lastPosition - $i];
+
+        $elements[$lastPosition - $i] = $left;
+        $elements[$i] = $right;
+    }
+    echo implode(' ', $elements);

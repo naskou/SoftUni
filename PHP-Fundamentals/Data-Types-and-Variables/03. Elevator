@@ -1,0 +1,7 @@
+<?php
+
+$peopleCount = intval(readline());
+$capacity = intval(readline());
+
+$courses = ceil($peopleCount / $capacity);
+echo $courses;

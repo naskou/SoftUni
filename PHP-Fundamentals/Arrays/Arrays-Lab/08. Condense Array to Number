@@ -1,0 +1,10 @@
+<?php
+    $array = array_map('intval', explode(' ', readline()));
+    while (count($array) > 1) {
+        $newArray = [];
+        for ($i = 0; $i < count($array) - 1; $i++) {
+            $newArray[] = $array[$i] + $array[$i + 1];
+        }
+        $array = $newArray;
+    }
+    echo $array[0];

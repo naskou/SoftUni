@@ -1,0 +1,27 @@
+<?php
+
+    $arr1 = array_map('intval', explode(' ', readline()));
+    $arr2 = array_map('intval', explode(' ', readline()));
+
+    $index = 0;
+    $position = count($arr1);
+
+
+    if ($arr1 === $arr2) {
+
+        echo 'Arrays are identical. Sum: ' . array_sum($arr1);
+    }
+    else if ($arr1 !== $arr2) {
+
+        for ($i = 0; $i < $position; $i++) {
+            if ($arr1[$i] == $arr2[$i]) {
+                $index++;
+            }
+            else {
+                break;
+            }
+        }
+        echo "Arrays are not identical. Found difference at $index index.";
+    }
+
+

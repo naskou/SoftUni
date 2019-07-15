@@ -1,0 +1,12 @@
+<?php
+
+    $num1 = intval(readline());
+    $num2 = intval(readline());
+    $num3 = intval(readline());
+
+    addAndSubtract ($num1, $num2, $num3);
+
+    function addAndSubtract ($num1, $num2, $num3)
+    {
+        echo $num1 + $num2 - $num3;
+    }

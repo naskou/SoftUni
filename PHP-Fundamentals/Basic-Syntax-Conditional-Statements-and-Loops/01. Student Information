@@ -1,0 +1,5 @@
+<?php
+$name = readline();
+$age = readline();
+$grade = readline();
+printf("Name: $name, Age: $age, Grade: $grade");

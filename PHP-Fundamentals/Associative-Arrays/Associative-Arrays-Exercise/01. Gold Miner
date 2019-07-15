@@ -1,0 +1,22 @@
+<?php
+
+    $input = readline();
+    $totalGold = [];
+
+    while (1) {
+        if ($input === 'stop') {
+            break;
+        }
+        $karats = intval(readline());
+        $goldType = $input;
+        if (!key_exists($goldType, $totalGold))
+        {
+            $totalGold[$goldType] = $karats;
+        } else {
+            $totalGold[$goldType] += $karats;
+        }
+        $input = readline();
+    }
+    foreach ($totalGold as $goldType => $karats) {
+        echo "$goldType -> $karats" . 'K' . PHP_EOL;
+    }

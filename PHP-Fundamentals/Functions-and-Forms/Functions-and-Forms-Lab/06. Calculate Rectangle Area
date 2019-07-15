@@ -1,0 +1,12 @@
+<?php
+
+    $sideA = floatval(readline());
+    $sideB = floatval(readline());
+
+    recArea($sideA, $sideB, $result);
+
+    function recArea($sideA, $sideB, $result)
+    {
+        $result = $sideA * $sideB;
+        echo $result;
+    }

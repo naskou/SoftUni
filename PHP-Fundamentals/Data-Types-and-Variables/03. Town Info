@@ -1,0 +1,7 @@
+<?php
+
+$townName = readline();
+$population = intval(readline());
+$area = floatval(readline());
+
+echo sprintf("Town $townName has population of $population and area $area square km.");

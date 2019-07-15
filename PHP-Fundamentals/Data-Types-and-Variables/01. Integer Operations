@@ -1,0 +1,12 @@
+<?php
+
+$number1 = intval(readline());
+$number2 = intval(readline());
+$number3 = intval(readline());
+$number4 = intval(readline());
+
+$finalSum = $number1 + $number2;
+$finalSum = floor($finalSum / $number3);
+$finalSum *= $number4;
+
+echo $finalSum;

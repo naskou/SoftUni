@@ -1,0 +1,6 @@
+<?php
+
+$r = readline();
+$circleArea = pi() * $r * $r;
+
+echo number_format($circleArea, 12);

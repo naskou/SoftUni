@@ -1,0 +1,17 @@
+<?php
+$username =readline();
+$counter = 1;
+$passwordUser = strrev($username);
+for ($i = 1; $i <= 4; $i++){
+    $password = readline();
+    if ($password == $passwordUser){
+        echo "User $username logged in.";
+        break;
+    }
+    elseif ($password != $passwordUser && $i === 4){
+        echo "User $username blocked!";
+    }
+    else {
+        echo 'Incorrect password. Try again.'.PHP_EOL;
+    }
+}

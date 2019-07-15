@@ -1,0 +1,35 @@
+<?php
+
+$input = readline();
+
+$courses = [];
+$registeredUsers = 0;
+
+while ($input !== "end") {
+    $tokens = explode(" : ", $input);
+    $currentCourse = $tokens[0];
+    $currentName = $tokens[1];
+
+    if (!key_exists($currentCourse, $courses)) {
+        $courses[$currentCourse][] = $currentName;
+    } else {
+        $courses[$currentCourse][] = $currentName;
+    }
+
+    $input = readline();
+}
+
+uksort($courses, function($key1, $key2) use($courses) {
+    $course1 = count($courses[$key1]);
+    $course2 = count($courses[$key2]);
+
+    return $course2 <=> $course1;
+});
+
+foreach ($courses as $course => $student) {
+    sort($courses[$course]);
+    echo "$course: " . count($courses[$course]).PHP_EOL;
+    for ($i = 0; $i < count($courses[$course]);$i++) {
+        echo "-- " . $courses[$course][$i].PHP_EOL;
+    }
+}

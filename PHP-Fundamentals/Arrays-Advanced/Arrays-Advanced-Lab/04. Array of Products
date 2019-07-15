@@ -1,0 +1,13 @@
+<?php
+
+    $n = intval(readline());
+    $products = [];
+    for ($i = 0; $i < $n; $i++) {
+        $element = readline();
+        $products[] = $element;
+    }
+
+    sort($products);
+    foreach ($products as $i => $product) {
+        echo ($i + 1) . '.' . $product . PHP_EOL;
+    }

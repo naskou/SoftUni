@@ -1,0 +1,19 @@
+<?php
+
+    $arr = array_map('intval', explode(' ', readline()));
+
+    for ($i = 0; $i < count($arr); $i++) {
+        $leftIndex = $i;
+        $rightIndex = count($arr) - 1 - $leftIndex;
+
+        if ($leftIndex == $rightIndex) {
+            echo $arr[$i];
+            break;
+        }
+        if ($leftIndex > $rightIndex) {
+            break;
+        }
+        $sum = $arr[$leftIndex] + $arr[$rightIndex];
+        echo $sum . " ";
+    }
+

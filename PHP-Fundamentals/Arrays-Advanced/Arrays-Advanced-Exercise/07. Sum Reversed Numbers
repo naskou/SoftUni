@@ -1,0 +1,12 @@
+<?php
+
+    $array = explode(' ', readline());
+    $sum = 0;
+
+    for ($i = 0; $i < count($array); $i++) {
+        $element = $array[$i];
+        $element = strrev($element);
+        $element = intval($element);
+        $sum += $element;
+    }
+    echo $sum;

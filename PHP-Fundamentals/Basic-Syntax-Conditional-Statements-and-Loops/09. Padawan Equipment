@@ -1,0 +1,24 @@
+<?php
+$budget = floatval(readline());
+$studentsCount = intval(readline());
+$lightsaberPrice = floatval(readline());
+$robePrice = floatval(readline());
+$beltPrice = floatval(readline());
+
+$freeBelts=intval($studentsCount/6);
+$belts = $studentsCount - $freeBelts;
+$robes= $studentsCount;
+$priceRobes = $robes * $robePrice;
+$priceBelts = $belts * $beltPrice;
+$lightSabers = ceil($studentsCount * 1.1);
+$priceLightsabers = $lightSabers * $lightsaberPrice;
+
+$totalPrice = $priceBelts + $priceLightsabers + $priceRobes;
+
+if ($budget >= $totalPrice) {
+    $totalPrice = sprintf("%0.2f", $totalPrice);
+    echo "The money is enough - it would cost $totalPrice" . "lv.";
+} else {
+    $result = sprintf("%0.2f", $totalPrice - $budget);
+    echo "Ivan Cho will need $result" . "lv more.";
+}

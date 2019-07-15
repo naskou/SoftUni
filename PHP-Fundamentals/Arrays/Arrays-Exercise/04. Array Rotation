@@ -1,0 +1,16 @@
+<?php
+
+    $numbers = explode(' ', readline());
+    $rotations = intval(readline());
+    $current = 0;
+
+    for ($i = 0; $i < $rotations; $i++) {
+
+        $current = $numbers[0];
+        unset($numbers[0]);
+        $numbers = array_values($numbers);
+        array_push($numbers, $current);
+    }
+    foreach ($numbers as $item) {
+        echo $item . " ";
+    }

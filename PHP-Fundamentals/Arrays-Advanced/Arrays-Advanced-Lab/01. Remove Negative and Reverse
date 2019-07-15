@@ -1,0 +1,20 @@
+<?php
+
+    $arr = explode(' ', readline());
+    $temp = [];
+    positive_function($arr, $temp);
+
+    function positive_function($arr, $temp)
+    {
+        foreach ($arr as &$value) {
+            if ($value > 0) {
+                $temp[] = $value;
+            }
+        }
+        if (count($temp) == 0) {
+            echo 'empty';
+
+        } else {
+            echo join(' ', array_reverse($temp));
+        }
+    }

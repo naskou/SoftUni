@@ -1,0 +1,7 @@
+<?php
+$number = intval(readline());
+while ($number % 2 != 0){
+    echo "Please write an even number. \n";
+    $number = intval(readline());
+}
+echo "The number is: " . abs($number);

@@ -1,0 +1,21 @@
+<?php
+
+    $input = readline();
+    $vowels = countVowels($input);
+    echo $vowels;
+
+    function countVowels(string $string): int
+    {
+        $vowelsCount = 0;
+        $length = strlen($string);
+
+        for ($i = 0; $i < $length; $i++) {
+            $current = strtolower($string[$i]);
+            if ($current === 'a' || $current === 'e' || $current === 'o' ||
+                $current === 'u' || $current === 'i') {
+                $vowelsCount++;
+            }
+        }
+
+        return $vowelsCount;
+    }

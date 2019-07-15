@@ -1,0 +1,24 @@
+<?php
+$prices = [];
+$qty = [];
+while(true) {
+    $input = explode(" ", readline());
+    if($input[0] == "buy") {
+        break;
+    }
+     $product = $input[0];
+     $price = $input[1];
+     $quantity = $input[2];
+      if(!key_exists($product, $prices) && !key_exists($product, $qty)) {
+          $prices[$product] = $price;
+          $qty[$product] = $quantity;
+      } else {
+          $prices[$product] = $price;
+          $qty[$product] += $quantity;
+      }
+}
+   foreach($prices as $product => $price) {
+       $totalPrice = $price * $qty[$product];
+       printf("%s -> %.2f\n", $product, $totalPrice);
+   }
+?>

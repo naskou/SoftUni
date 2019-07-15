@@ -1,0 +1,70 @@
+<?php
+$dayType = readline();
+$age = intval(readline());
+$ticketprice = 0;
+if ($dayType === 'Weekday')
+{
+    if (0 <= $age && $age <= 18)
+    {
+        $ticketprice = 12;
+        echo $ticketprice.'$';
+    }
+    if (18 < $age && $age <= 64)
+    {
+        $ticketprice = 18;
+        echo $ticketprice.'$';
+    }
+    if (64 < $age && $age <= 122)
+    {
+        $ticketprice = 12;
+        echo $ticketprice.'$';
+    }
+    if ($age < 0 || $age > 122)
+    {
+        echo 'Error!';
+    }
+}
+if ($dayType === 'Weekend')
+{
+    if (0 <= $age && $age <= 18)
+    {
+        $ticketprice = 15;
+        echo $ticketprice.'$';
+    }
+    if (18 < $age && $age <= 64)
+    {
+        $ticketprice = 20;
+        echo $ticketprice.'$';
+    }
+    if (64 < $age && $age <= 122)
+    {
+        $ticketprice = 15;
+        echo $ticketprice.'$';
+    }
+    if ($age < 0 || $age > 122)
+    {
+        echo 'Error!';
+    }
+}
+if ($dayType === 'Holiday')
+{
+    if (0 <= $age && $age <= 18)
+    {
+        $ticketprice = 5;
+        echo $ticketprice.'$';
+    }
+    if (18 < $age && $age <= 64)
+    {
+        $ticketprice = 12;
+        echo $ticketprice.'$';
+    }
+    if (64 < $age && $age <= 122)
+    {
+        $ticketprice = 10;
+        echo $ticketprice.'$';
+    }
+    if ($age < 0 || $age > 122)
+    {
+        echo 'Error!';
+    }
+}

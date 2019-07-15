@@ -1,0 +1,14 @@
+<?php
+
+    $first = explode(' ', readline());
+    $second = explode(' ', readline());
+    $result = [];
+
+
+    for ($i = 0; $i < min(count($first), count($second)); $i++) {
+        echo $first[$i] . ' ' . $second[$i] . ' ';
+    }
+    $maxArr = count($first) > count($second) ? $first : $second;
+    for ($j = $i; $j < max(count($first), count($second)); $j++) {
+        echo $maxArr[$j] . ' ';
+    }

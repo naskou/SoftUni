@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HalfSumElement
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int midSum = 0;
+            int number = 0;
+            int sum = 0;
+            for (int i = 0; i < n; i++)
+            {
+                number = int.Parse(Console.ReadLine());
+                if (number > midSum)
+                {
+                    midSum = number;
+                }
+                sum += number;
+            }
+            sum -= midSum;
+            if (sum == midSum)
+            {
+                Console.WriteLine("Yes\nSum = " + sum);
+            }
+            else if (sum > midSum)
+            {
+                Console.WriteLine("No\nDiff = " + Math.Abs(sum - midSum));
+            }
+            else if (midSum > sum)
+            {
+                Console.WriteLine("No\nDiff = " + Math.Abs(midSum - sum));
+            }
+
+        }
+    }
+}

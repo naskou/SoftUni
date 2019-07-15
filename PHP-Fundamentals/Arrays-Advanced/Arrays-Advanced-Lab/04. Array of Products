@@ -10,4 +10,4 @@
     sort($products);
     foreach ($products as $i => $product) {
         echo ($i + 1) . '.' . $product . PHP_EOL;
-    }a
+    }

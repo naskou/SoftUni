@@ -1,0 +1,32 @@
+<?php
+
+    $size = intval(readline());
+
+    firstPart($size);
+    echo ' ' . PHP_EOL;
+    secondPart($size);
+
+    function firstPart($size)
+    {
+        for ($i = 1; $i < $size; $i++) {
+            for ($j = 1; $j <= $i; $j++) {
+
+                echo($j . ' ');
+            }
+            echo " " . PHP_EOL;
+        }
+        for ($k = 1; $k <= $size; $k++) {
+            echo $k . ' ';
+        }
+    }
+
+    function secondPart($size)
+    {
+        for ($i = $size - 1; $i > 0; $i--) {
+            for ($j = 1; $j <= $i; $j++) {
+
+                echo($j . ' ');
+            }
+            echo " " . PHP_EOL;
+        }
+    }

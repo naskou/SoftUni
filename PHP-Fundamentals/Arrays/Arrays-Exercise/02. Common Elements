@@ -1,0 +1,16 @@
+<?php
+    
+    $arr1 = explode(" ", readline());
+    $arr2 = explode(" ", readline());
+    $result = [];
+    
+    foreach ($arr2 as $item2) {
+
+        foreach ($arr1 as $item1) {
+            
+            if ($item1 == $item2) {
+                $result[] = $item2;
+            }
+        }
+    }
+    echo implode(' ', $result);

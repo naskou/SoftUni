@@ -1,0 +1,6 @@
+<?php
+    array_map(function ($float) {
+        $round = round($float);
+        printf("%.2f => %d\n", $float, round($float));
+        return $round . PHP_EOL;
+    }, explode(' ', readline()));

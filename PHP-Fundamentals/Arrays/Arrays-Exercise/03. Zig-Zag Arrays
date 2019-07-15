@@ -1,0 +1,18 @@
+<?php
+
+    $n = intval(readline());
+    $arr1 = [];
+    $arr2 = [];
+
+    for ($i = 0; $i < $n; $i++) {
+        $numbers = array_map('intval', explode(' ', readline()));
+        if ($i % 2 == 0 || $i == 0) {
+
+            $arr1[$i] = $numbers[0];
+            $arr2[$i] = $numbers[1];
+        } else {
+            $arr2[$i] = $numbers[0];
+            $arr1[$i] = $numbers[1];
+        }
+    }
+    echo implode(' ', $arr1) . PHP_EOL . implode(' ', $arr2);

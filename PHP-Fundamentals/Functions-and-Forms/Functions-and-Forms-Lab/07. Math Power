@@ -1,0 +1,12 @@
+<?php
+
+    $number = floatval(readline());
+    $power = intval(readline());
+
+    mathPower($number, $power, $result);
+
+    function mathPower($number, $power, $result)
+    {
+        $result = pow($number, $power);
+        echo $result;
+    }

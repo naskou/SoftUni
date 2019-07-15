@@ -1,0 +1,20 @@
+<?php
+
+$pokePower = intval(readline());
+$distanceTargets = intval(readline());
+$exhaustFactor = intval(readline());
+
+$targetsCount = 0;
+$half = $pokePower * 0.5;
+
+while ($pokePower >= $distanceTargets) {
+    $pokePower -= $distanceTargets;
+    $targetsCount++;
+    if ($pokePower == $half) {
+        if ($pokePower >= $exhaustFactor && $exhaustFactor > 0) {
+            $pokePower = intval($pokePower / $exhaustFactor);
+        }
+    }
+}
+echo $pokePower . PHP_EOL;
+echo $targetsCount;

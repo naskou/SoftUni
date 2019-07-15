@@ -1,0 +1,28 @@
+<?php
+
+$infoCompanies = [];
+
+$cmd = explode(' -> ', readline());
+
+while ($cmd[0] !== 'End') {
+    list($company, $employee) = $cmd;
+
+    if (!key_exists($company, $infoCompanies)) {
+        $infoCompanies[$company] = [];
+    }
+
+    if (!in_array($employee, $infoCompanies[$company])) {
+        $infoCompanies[$company][] = $employee;
+    }
+
+    $cmd = explode(' -> ', readline());
+}
+
+ksort($infoCompanies);
+
+foreach ($infoCompanies as $companyId => $users) {
+    echo $companyId . PHP_EOL;
+    foreach ($users as $user) {
+        echo "-- $user" . PHP_EOL;
+    }
+}

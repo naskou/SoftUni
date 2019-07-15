@@ -1,0 +1,16 @@
+<?php
+
+    $string = readline();
+
+    middleCharacters($string);
+
+    function middleCharacters ($string)
+    {
+        $stringLength = strlen($string);
+        if ($stringLength % 2 == 0) {
+            echo substr($string, ($stringLength / 2) - 1, 2);
+        }
+        else if ($stringLength % 2 != 0) {
+            echo substr($string, (int)($stringLength / 2), 1);
+        }
+    }

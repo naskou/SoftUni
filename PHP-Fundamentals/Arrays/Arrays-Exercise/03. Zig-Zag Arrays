@@ -1,18 +1,17 @@
 <?php
 
-    $n = intval(readline());
-    $arr1 = [];
-    $arr2 = [];
+    $input = intval(readline());
+    $arrEvens = [];
+    $arrOdds = [];
 
-    for ($i = 0; $i < $n; $i++) {
-        $numbers = array_map('intval', explode(' ', readline()));
-        if ($i % 2 == 0 || $i == 0) {
-
-            $arr1[$i] = $numbers[0];
-            $arr2[$i] = $numbers[1];
+    for ($i = 0; $i < $input; $i++) {
+        $curr = explode(' ', readline());
+        if ($i % 2 == 0) {
+            $arrEvens[] = $curr[0];
+            $arrOdds[] = $curr[1];
         } else {
-            $arr2[$i] = $numbers[0];
-            $arr1[$i] = $numbers[1];
+            $arrEvens[] = $curr[1];
+            $arrOdds[] = $curr[0];
         }
     }
-    echo implode(' ', $arr1) . PHP_EOL . implode(' ', $arr2);
+    echo implode(' ', $arrEvens) . PHP_EOL . implode(' ', $arrOdds);

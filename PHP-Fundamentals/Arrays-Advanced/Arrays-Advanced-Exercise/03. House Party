@@ -1,0 +1,28 @@
+<?php
+
+    $commands = intval(readline());
+    $guests = [];
+
+    for ($i = 0; $i < $commands; $i++) {
+        $name = readline();
+        $expression = explode(' ', $name);
+
+        if ($expression[2] === 'going!') {
+            if (in_array($expression[0], $guests)) {
+                echo "$expression[0] is already in the list!" . PHP_EOL;
+            } else {
+                $guests[] = $expression[0];
+            }
+        }
+        else if ($expression[2] === 'not') {
+            if (in_array($expression[0], $guests)) {
+                $index = array_search($expression[0], $guests);
+                array_splice($guests, $index, 1);
+            } else {
+                echo "$expression[0] is not in the list!" . PHP_EOL;
+            }
+        }
+    }
+    foreach ($guests as $guest) {
+        echo $guest . PHP_EOL;
+    }

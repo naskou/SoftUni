@@ -1,0 +1,46 @@
+<?php
+
+$groupCount = intval(readline());
+$groupType = readline();
+$dayOfWeek = readline();
+
+$pricePerPerson = 0;
+
+if ($groupType === "Students") {
+    if ($dayOfWeek === "Friday") {
+        $pricePerPerson = 8.45;
+    } else if ($dayOfWeek === "Saturday") {
+        $pricePerPerson = 9.8;
+    } else {
+        $pricePerPerson = 10.46;
+    }
+
+} else if ($groupType === "Business") {
+    if ($dayOfWeek === "Friday") {
+        $pricePerPerson = 10.9;
+    } else if ($dayOfWeek === "Saturday") {
+        $pricePerPerson = 15.6;
+    } else {
+        $pricePerPerson = 16;
+    }
+} else {
+    if ($dayOfWeek === "Friday") {
+        $pricePerPerson = 15;
+    } else if ($dayOfWeek === "Saturday") {
+        $pricePerPerson = 20;
+    } else {
+        $pricePerPerson = 22.5;
+    }
+}
+$totalPrice = $pricePerPerson * $groupCount; //Here we calculate the price BEFORE we check if we have discount
+
+if ($groupType === "Students" && $groupCount >= 30) {
+    $totalPrice *= 0.85;
+} else if ($groupType === "Business" && $groupCount >= 100) {
+    $totalPrice -= 10 * $pricePerPerson;
+} else if ($groupType === "Regular" && $groupCount >= 10 && $groupCount <= 20) {
+    $totalPrice *= 0.95;
+}
+$totalPrice = sprintf("%.2f", $totalPrice);
+
+echo "Total price: $totalPrice";

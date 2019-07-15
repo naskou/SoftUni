@@ -1,0 +1,12 @@
+<?php
+
+$array = array_map("intval", explode(" ", readline()));
+$total = $array;
+
+$number = readline();
+while ($number !== "end") {
+    $convertedNum = array_map("intval", (str_split($number)));
+    array_splice($total, $convertedNum[0], 0, intval($number));
+    $number = readline();
+}
+echo implode(" ", $total);

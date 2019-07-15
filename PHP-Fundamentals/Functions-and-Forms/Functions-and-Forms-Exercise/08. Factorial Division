@@ -1,0 +1,21 @@
+<?php
+
+    $num1 = intval(readline());
+    $num2 = intval(readline());
+    $factorial1 = $num1;
+    $factorial2 = $num2;
+
+    resultFactDivision($num1, $factorial1, $num2, $factorial2);
+
+    function resultFactDivision($num1, $factorial1, $num2, $factorial2)
+    {
+        while ($num1 > 1) {
+            $factorial1 *= ($num1 - 1);
+            $num1--;
+        }
+        while ($num2 > 1) {
+            $factorial2 *= ($num2 - 1);
+            $num2--;
+        }
+        echo sprintf("%.2f", $factorial1 / $factorial2);
+    }

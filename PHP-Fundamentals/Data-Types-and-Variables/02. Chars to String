@@ -1,0 +1,7 @@
+<?php
+
+$input1 = readline();
+$input2 = readline();
+$input3 = readline();
+
+echo sprintf("%s%s%s", $input1, $input2, $input3);

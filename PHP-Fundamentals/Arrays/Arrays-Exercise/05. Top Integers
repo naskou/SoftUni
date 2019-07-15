@@ -1,0 +1,24 @@
+<?php
+
+    $arr = explode(' ', readline());
+    $result = [];
+
+    for ($i = 0; $i < count($arr); $i++) {
+        $isBigger = true;
+        $currElement = $arr[$i];
+
+        for ($j = $i + 1; $j < count($arr); $j++) {
+
+            $nextElement = $arr[$j];
+
+            if ($currElement <= $nextElement) {
+
+                $isBigger = false;
+                break;
+            }
+        }
+        if ($isBigger) {
+            $result[] = $currElement;
+        }
+    }
+    echo implode(' ', $result);

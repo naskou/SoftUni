@@ -1,0 +1,32 @@
+<?php
+
+$lostGames = intval(readline());
+$headsetPrice = floatval(readline());
+$mousePrice = floatval(readline());
+$keyboardPrice = floatval(readline());
+$displayPrice = floatval(readline());
+
+$headsetCount = 0;
+$mouseCount = 0;
+$keyboardCount = 0;
+$displayCount = 0;
+
+for ($h = 2; $h <= $lostGames; $h += 2) {
+    $headsetCount++;
+}
+for ($m = 3; $m <= $lostGames; $m += 3) {
+    $mouseCount++;
+}
+for ($k = 1; $k <= $lostGames; $k++) {
+
+    if ($k % 6 === 0) {
+        $keyboardCount++;
+    }
+}
+for ($d = 2; $d <= $keyboardCount; $d += 2) {
+    $displayCount++;
+}
+
+$sum = ($headsetCount * $headsetPrice) + ($mouseCount * $mousePrice) + ($keyboardCount * $keyboardPrice) + ($displayCount * $displayPrice);
+echo 'Rage expenses: ';
+echo sprintf("%0.2f", $sum) . ' lv.';

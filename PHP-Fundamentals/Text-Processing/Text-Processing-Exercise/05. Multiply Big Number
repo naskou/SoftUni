@@ -1,0 +1,6 @@
+<?php
+
+    $input = readline();
+    $multiplier = readline();
+
+    echo bcmul($input, $multiplier);

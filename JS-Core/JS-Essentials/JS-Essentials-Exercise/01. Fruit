@@ -1,0 +1,4 @@
+function solve(fruit, weight, money) {
+    let price = money * (weight / 1000);
+    console.log(`I need ${price.toFixed(2)} leva to buy ${(weight / 1000).toFixed(2)} kilograms ${fruit}.`);
+}

@@ -1,0 +1,11 @@
+<?php
+
+    $word = readline();
+    $text = readline();
+    while (1) {
+        $text = str_replace($word, '', $text);
+        if (!strstr($text, $word)) {
+            break;
+        }
+    }
+    echo $text;

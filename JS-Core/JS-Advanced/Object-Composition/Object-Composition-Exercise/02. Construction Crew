@@ -1,0 +1,7 @@
+function foo(input) {
+    if (input.handsShaking) {
+        input.handsShaking = false;
+        input.bloodAlcoholLevel += input.weight * input.experience * 0.1;
+    }
+    return input;
+}

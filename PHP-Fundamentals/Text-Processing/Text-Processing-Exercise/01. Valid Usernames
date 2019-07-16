@@ -1,0 +1,25 @@
+<?php
+
+    $input = explode(', ', readline());
+
+    for ($i = 0; $i < count($input); $i++) {
+        $currentUsername = $input[$i];
+        if (strlen($currentUsername) >= 3 and strlen($currentUsername) <= 16) {
+
+            for ($j = 0; $j < strlen($currentUsername); $j++) {
+
+                $currentLetter = $currentUsername[$j];
+                $isValid = ctype_alpha($currentLetter) || ctype_digit($currentLetter)
+                    || ord($currentLetter) == 95 || ord($currentLetter) == 45;
+                if ($isValid) {
+                    $flag = true;
+                } else {
+                    $flag = false;
+                    break;
+                }
+            }
+            if ($flag) {
+                echo $currentUsername . PHP_EOL;
+            }
+        }
+    }

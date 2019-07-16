@@ -1,0 +1,23 @@
+<?php
+
+    $input = explode(' ', readline());
+    $string1 = $input[0];
+    $string2 = $input[1];
+    if (strlen($string1) >= strlen($string2)) {
+        $longer = $string1;
+        $shorter = $string2;
+    } else {
+        $longer = $string2;
+        $shorter = $string1;
+    }
+    $sum = 0;
+
+    for ($i = 0; $i < strlen($shorter); $i++) {
+        $sum += ord($shorter[$i]) * ord($longer[$i]);
+
+    }
+    for ($j = strlen($shorter); $j < strlen($longer); $j++) {
+
+        $sum += ord($longer[$j]);
+    }
+    echo $sum;

@@ -1,0 +1,111 @@
+<?php
+class Book
+{
+    private $title;
+    private $author;
+    private $publisher;
+    private $releaseDate;
+    private $isbn;
+    private $price;
+
+    public function __construct($title, $author, $publisher, $releaseDate, $isbn, $price)
+    {
+        $this->title = $title;
+        $this->author = $author;
+        $this->publisher = $publisher;
+        $this->releaseDate = $releaseDate;
+        $this->isbn = $isbn;
+        $this->price = $price;
+    }
+
+    public function getAuthor() {
+        return $this->author;
+    }
+
+    public function getPrice() {
+        return $this->price;
+    }
+
+    /**
+     * @param mixed $price
+     */
+    public function setPrice($price): void
+    {
+        $this->price = $price;
+    }
+
+    public function addPrice($price)
+    {
+        $this->price += $price;
+    }
+
+}
+class Library
+{
+    private $name;
+    /**
+     * @var array
+     */
+    private $listOfBooks;
+
+    public function __construct($name, array $listOfBooks)
+    {
+        $this->name = $name;
+        $this->listOfBooks = $listOfBooks;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @param Book[] $listOfBooks
+     */
+    public function setListOfBooks(array $listOfBooks): void
+    {
+        $this->listOfBooks = $listOfBooks;
+    }
+
+}
+
+$n = intval(readline());
+$books = [];
+
+for ($i = 0; $i < $n;$i++){
+    list($bookName, $author, $publisher, $releaseDate, $isbn, $price) = explode(" ", readline());
+    $currBook = new Book($bookName, $author, $publisher, $releaseDate, $isbn, floatval($price));
+    if (key_exists($author, $books)) {
+        $books[$author]->addPrice($price);
+    } else {
+        $books[$author] = $currBook;
+    }
+    $library = new Library($author, $books);
+}
+
+usort($books, function(Book $book1, Book $book2) use ($books) {
+   $price1 = $book1->getPrice();
+   $price2 = $book2->getPrice();
+
+   $author1 = $book1->getAuthor();
+   $author2 = $book2->getAuthor();
+
+   if ($price1 === $price2) {
+       return $author1 <=> $author2;
+   }
+
+   return $price2 <=> $price1;
+
+});
+
+foreach ($books as $book) {
+    printf("%s -> %0.2f", $book->getAuthor(), $book->getPrice());
+    echo PHP_EOL;
+}

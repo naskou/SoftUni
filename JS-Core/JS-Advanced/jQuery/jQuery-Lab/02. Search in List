@@ -1,0 +1,9 @@
+function search() {
+    let searches = $('#searchText').val();
+
+    $('#towns li').css('font-weight', 'normal');
+    let towns = $(`#towns li:contains(${searches})`)
+        .css('font-weight', 'bold');
+
+    $('#result').text(towns.length + ' matches found');
+}

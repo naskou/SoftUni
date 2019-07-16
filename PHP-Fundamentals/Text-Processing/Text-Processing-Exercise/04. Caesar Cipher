@@ -1,0 +1,9 @@
+<?php
+
+    $input = readline();
+
+    for ($i = 0; $i < strlen($input); $i++) {
+        $currLetter = ord($input[$i]) + 3;
+        $input[$i] = chr($currLetter);
+    }
+    echo $input;

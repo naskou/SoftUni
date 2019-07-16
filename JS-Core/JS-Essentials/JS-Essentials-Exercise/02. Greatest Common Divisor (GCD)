@@ -1,0 +1,11 @@
+function gcd(number, divisor) {
+    let big = Math.max(number, divisor);
+    let small = Math.min(number, divisor);
+    let residue = 0;
+    while (small !== 0) {
+        let residue = big % small;
+        big = small;
+        small = residue;
+    }
+    return big;
+}

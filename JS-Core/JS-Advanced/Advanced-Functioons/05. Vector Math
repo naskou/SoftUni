@@ -1,0 +1,24 @@
+(function () {
+    const add = ([x1, y1], [x2, y2]) => {
+        return [x1 + x2, y1 + y2];
+    };
+    const multiply = ([x1, x2], scalar) => {
+        return [x1 * scalar, x2 * scalar];
+    };
+    const  length = ([x1, x2]) => {
+        return Math.sqrt(x1 ** 2 + x2 ** 2);
+    };
+    const dot = ([x1,  y1], [x2, y2]) => {
+        return x1 * x2 + y1 * y2;
+    };
+    const cross = ([x1, y1], [x2, y2]) => {
+        return x1 * y2 - x2 * y1;
+    };
+    return {
+        add,
+        multiply,
+        length,
+        dot,
+        cross
+    };
+})();

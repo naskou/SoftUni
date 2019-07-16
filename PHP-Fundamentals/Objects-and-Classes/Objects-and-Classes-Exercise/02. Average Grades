@@ -1,0 +1,107 @@
+<?php
+
+    class Student
+    {
+        private $name;
+        /**
+         * @var array
+         */
+        private $grade_list;
+
+        private $average;
+
+        public function __construct($name, $grade_list, $average)
+        {
+            $this->setName($name);
+            $this->setGradeList($grade_list);
+            $this->setAverage($average);
+        }
+
+        /**
+         * @return mixed
+         */
+        public function getName()
+        {
+            return $this->name;
+        }
+
+        /**
+         * @param mixed $name
+         */
+        public function setName($name): void
+        {
+            $this->name = $name;
+        }
+
+        /**
+         * @return array
+         */
+        public function getGradeList(): array
+        {
+            return $this->grade_list;
+        }
+
+        /**
+         * @param array $grade_list
+         */
+        public function setGradeList(array $grade_list): void
+        {
+            $this->grade_list = $grade_list;
+        }
+
+
+
+
+        /**
+         * @return mixed
+         */
+        public function getAverage()
+        {
+            return $this->average;
+        }
+
+        /**
+         * @param mixed $average
+         */
+        public function setAverage($average): void
+        {
+            $this->average = $average;
+        }
+
+    }
+
+    $input = intval(readline());
+    $students = [];
+    $grades=[];
+    for ($i = 0; $i < $input; $i++) {
+        $tokens = explode(' ', readline());
+        $name = $tokens[0];
+        $sum = 0;
+        for ($j = 1; $j < count($tokens); $j++) {
+            $sum += $tokens[$j];
+            $grades[] = $tokens[$j];
+
+        }
+        $average = $sum / count($grades);
+        $student= new Student($name, $grades, $average);
+        $students[] = $student;
+        $grades=[];
+
+
+    }
+    usort($students, function (Student $student1, Student $student2) use ($students) {
+        $average1 = $student1->getAverage();
+        $average2 = $student2->getAverage();
+        $name1 = $student1->getName();
+        $name2 = $student2->getName();
+        if ($name1 == $name2) {
+            return $average2 <=> $average1;
+        }
+        return $name1 <=> $name2;
+    });
+    foreach ($students as $student) {
+        if ($student->getAverage() >= 5) {
+            $formated = number_format($student->getAverage(),2);
+            echo $student->getName() . ' -> ' . $formated . PHP_EOL;
+        }
+    }

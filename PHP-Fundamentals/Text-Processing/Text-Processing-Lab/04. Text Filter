@@ -1,0 +1,11 @@
+<?php
+
+    $words = explode(', ', readline());
+    $text = readline();
+
+    for ($i = 0; $i < count($words); $i++) {
+        $current = $words[$i];
+        $asterisk = str_repeat('*', strlen($current));
+        $text = str_replace($current, $asterisk, $text);
+    }
+    echo $text;

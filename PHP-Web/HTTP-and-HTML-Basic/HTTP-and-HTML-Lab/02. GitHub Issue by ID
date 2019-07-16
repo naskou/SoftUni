@@ -1,0 +1,11 @@
+GET /repos/SoftUni-Tech-Module/TestRepository/issues/1 HTTP/1.1
+Host: api.github.com
+User-Agent: PostmanRuntime/7.13.0
+Accept: */*
+Cache-Control: no-cache
+Postman-Token: 978c55cc-1f70-4535-af62-ba198cc84b79,45c8e98d-3a8f-4fc7-92c4-144fcdf73a13
+Host: api.github.com
+accept-encoding: gzip, deflate
+Connection: keep-alive
+cache-control: no-cache
+

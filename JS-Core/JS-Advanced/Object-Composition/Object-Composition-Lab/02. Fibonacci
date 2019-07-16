@@ -1,0 +1,14 @@
+function getFibonator() {
+    return (function () {
+        let first = 1;
+        let second = 1;
+
+        return function () {
+            let result = first;
+            let sum = first + second;
+            first = second;
+            second = sum;
+            return result;
+        }
+    })();
+}

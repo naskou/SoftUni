@@ -1,0 +1,45 @@
+function solve (dayType, age) {
+    let ticketPrice;
+    if (dayType == 'Weekday') {
+        if (age >= 0 && age <= 18) {
+            ticketPrice = 12;
+            console.log(ticketPrice + '$');
+        }
+        else if (age > 18 && age <= 64) {
+            ticketPrice = 18;
+            console.log(ticketPrice + '$');
+        }
+        else if (age > 64 && age <= 122) {
+            ticketPrice = 12;
+            console.log(ticketPrice + '$');
+        }
+    }
+    else if (dayType == 'Weekend') {
+        if (age >= 0 && age <= 18) {
+            ticketPrice = 15;
+            console.log(ticketPrice + '$');
+        }
+        else if (age > 18 && age <= 64) {
+            ticketPrice = 20;
+            console.log(ticketPrice + '$');
+        }
+        else if (age > 64 && age <= 122) {
+            ticketPrice = 15;
+            console.log(ticketPrice + '$');
+        }
+    }
+    else if (dayType == 'Holiday') {
+        if (age >= 0 && age <= 18) {
+            ticketPrice = 5;
+            console.log(ticketPrice + '$');
+        }
+        else if (age > 18 && age <= 64) {
+            ticketPrice = 12;
+            console.log(ticketPrice + '$');
+        }
+        else if (age > 64 && age <= 122) {
+            ticketPrice = 10;
+            console.log(ticketPrice + '$');
+        }
+    }
+}

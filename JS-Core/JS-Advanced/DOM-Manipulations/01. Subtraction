@@ -1,0 +1,7 @@
+function subtract() {
+    let firstNum = $('#firstNumber').val();
+    let secondNum = $('#secondNumber').val();
+    let result = $('#result');
+
+    result.text(firstNum - secondNum);
+}

@@ -1,0 +1,112 @@
+<?php
+
+Class Article
+{
+    /**
+     * @var string
+     */
+    private $title;
+    /**
+     * @var string
+     */
+    private $content;
+    /**
+     * @var string
+     */
+    private $author;
+
+    /**
+     * Article constructor.
+     * @param string $title
+     * @param string $content
+     * @param string $author
+     */
+    public function __construct(string $title, string $content, string $author)
+    {
+        $this->title = $title;
+        $this->content = $content;
+        $this->author = $author;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string $title
+     */
+    public function setTitle(string $title): void
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContent(): string
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param string $content
+     */
+    public function setContent(string $content): void
+    {
+        $this->content = $content;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAuthor(): string
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param string $author
+     */
+    public function setAuthor(string $author): void
+    {
+        $this->author = $author;
+    }
+
+    public function __toString()
+    {
+        return $this->getTitle() . ' - ' . $this->getContent() . ': ' . $this->getAuthor() . PHP_EOL;
+    }
+
+
+}
+
+$articles = [];
+
+$n = intval(readline());
+
+for ($i = 0; $i < $n; $i++) {
+    $cmd = explode(', ', readline());
+    list($title, $content, $author) = $cmd;
+    $article = new Article($title, $content, $author);
+    $articles[] = $article;
+}
+
+$orderBy = readline();
+
+uasort($articles, function (Article $article1, Article $article2) use ($articles, $orderBy) {
+   if ($orderBy === 'title'){
+       return $article1->getTitle() <=> $article2->getTitle();
+   } elseif ($orderBy === 'content') {
+       return $article1->getContent() <=> $article2->getContent();
+   }elseif ($orderBy === 'author') {
+       return $article1->getAuthor() <=> $article2->getAuthor();
+   }
+});
+
+foreach ($articles as $articleInOrder) {
+    echo $articleInOrder;
+}

@@ -1,0 +1,15 @@
+function create(sentences) {
+        sentences.forEach((sentence) => {
+            let div = $('<div>');
+            let p = $('<p>');
+            let content = $('#content');
+
+            div.on('click', function () {
+                p.css('display', 'block');
+            });
+            p.text(sentence);
+            p.css('display', 'none');
+            div.append(p);
+            content.append(div);
+        });
+    }

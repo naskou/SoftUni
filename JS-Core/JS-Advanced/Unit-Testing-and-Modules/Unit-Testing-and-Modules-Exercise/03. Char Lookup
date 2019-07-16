@@ -1,0 +1,44 @@
+describe('lookupChar', function () {
+    it('with a non-string first parameter, should return undefined', function () {
+        let str = 23;
+        let idx = 0;
+        let result = lookupChar(str, idx);
+        assert.equal(result, undefined);
+    });
+    it('should return undefined if second parameter is not number', function () {
+        let str = 'pesho';
+        let idx = 'gosho';
+        let result = lookupChar(str, idx);
+        assert.equal(result, undefined);
+    });
+    it('should return "Incorrect index" if index is bigger than string length"', function () {
+        let str = 'pesho';
+        let idx = 5;
+        let result = lookupChar(str, idx);
+        assert.equal(result, 'Incorrect index')
+    });
+    it('should return "Incorrect index" if index is a negative number"', function () {
+        let str = 'pesho';
+        let idx = -5;
+        let result = lookupChar(str, idx);
+        assert.equal(result, 'Incorrect index')
+    });
+    it('should return the actual character if both inputs are correct', function () {
+        let str = 'gosho';
+        let idx = 2;
+        let result = lookupChar(str, idx);
+        assert.equal(result, 's');
+    });
+    it('should return the actual character if both inputs are correct test 2', function () {
+        let str = 'bate Bate';
+        let idx = 5;
+        let result = lookupChar(str, idx);
+        assert.equal(result, 'B');
+    });
+    it('should return undefined if index parameter is a floating point', function () {
+        let str = 'pesho';
+        let idx = 3.14;
+        let result = lookupChar(str, idx);
+        assert.equal(result, undefined);
+    });
+});

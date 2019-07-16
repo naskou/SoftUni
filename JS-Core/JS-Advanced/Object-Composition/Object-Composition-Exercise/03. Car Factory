@@ -1,0 +1,14 @@
+function solve(object) {
+    let engines = [{power: 90, volume: 1800}, {power: 120, volume: 2400}, {power: 200, volume: 3500}];
+    let wheel = object.wheelsize % 2 === 0 ? object.wheelsize - 1 : object.wheelsize;
+
+    return {
+        model: object.model,
+        engine: engines.filter(x => x.power >= object.power)[0],
+        carriage: {
+            type: object.carriage,
+            color: object.color
+        },
+        wheels: [wheel, wheel, wheel, wheel]
+    };
+}

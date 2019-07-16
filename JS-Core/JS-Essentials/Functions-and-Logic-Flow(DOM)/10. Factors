@@ -1,0 +1,7 @@
+function solve() {
+    let num = Number(document.getElementById('num').value);
+    let resultElement = document.getElementById('result');
+    let doesTheThing = num => [...Array(num + 1).keys()]
+        .filter(x => num % x === 0);
+    resultElement.innerHTML = doesTheThing(num).join(' ');
+}

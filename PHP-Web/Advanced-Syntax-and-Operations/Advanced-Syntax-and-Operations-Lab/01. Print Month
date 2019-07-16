@@ -1,0 +1,26 @@
+<?php
+
+    $month = readline();
+
+    $months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+    ];
+
+    if ($month > 12 || $month < 1) {
+
+        echo "Invalid Month!";
+    } else {
+
+        echo $months[$month - 1];
+    }

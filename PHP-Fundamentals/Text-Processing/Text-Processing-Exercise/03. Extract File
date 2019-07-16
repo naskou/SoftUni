@@ -1,0 +1,13 @@
+<?php
+
+    $input = explode('\\', readline());
+    $target = $input[count($input) - 1];
+    $fileName = explode('.', $target);
+    if (count($fileName) === 3) {
+        echo "File name: $fileName[0].$fileName[1]" . PHP_EOL;
+        echo "File extension: $fileName[2]";
+    } else {
+        echo "File name: $fileName[0]" . PHP_EOL;
+        echo "File extension: $fileName[1]";
+    }
+

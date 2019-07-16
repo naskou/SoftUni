@@ -1,0 +1,13 @@
+<?php
+
+    $input = readline();
+    $res = '';
+    
+    for ($i = 0; $i < strlen($input) - 1; $i++) {
+        $currLetter = $input[$i];
+        $nextLetter = $input[$i + 1];
+        if ($currLetter != $nextLetter) {
+            $res .= $currLetter;
+        }
+    }
+    echo $res . $input[strlen($input) - 1];

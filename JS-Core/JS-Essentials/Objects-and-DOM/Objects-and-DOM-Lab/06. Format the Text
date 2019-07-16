@@ -1,0 +1,15 @@
+function solve(){
+    let wholeText = document.getElementById('input').textContent;
+    let sentenses = wholeText.split('. ');
+    sentenses[wholeText.length - 1] = sentenses[sentenses.length - 1].slice(0, -1);
+    sentenses = sentenses.map(x => x + '.');
+    let num = Math.ceil(sentenses.length / 3);
+
+    for (let i = 0; i < num; i++) {
+        let p = document.createElement('p');
+        p.textContent = sentenses.slice(i * 3, i * 3 + 3).join(' ');
+        if (p.textContent.length > 0) {
+            document.getElementById('output').appendChild(p);
+        }
+    }
+}

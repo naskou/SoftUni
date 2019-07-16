@@ -1,0 +1,11 @@
+function binarySearch() {
+    let arr = document.getElementById('arr').value.split(', ');
+    let number = document.getElementById('num').value;
+    let resultElement = document.getElementById('result');
+
+    if (arr.indexOf(number) !== -1) {
+        resultElement.innerHTML = `Found ${number} at index ${arr.indexOf(number)}`;
+    } else {
+        resultElement.innerHTML = `${number} is not in the array`;
+    }
+}

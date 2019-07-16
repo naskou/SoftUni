@@ -1,0 +1,24 @@
+<?php
+
+    $arr = explode(' ', readline());
+
+    $number = '';
+    $maxCount = 0;
+
+    for ($row = 0; $row < count($arr); $row++) {
+
+        $currentCount = 0;
+
+        for ($col = $row; $col < count($arr); $col++) {
+
+            if ($arr[$row] === $arr[$col]) {
+                $currentCount++;
+
+                if ($currentCount > $maxCount) {
+                    $maxCount = $currentCount;
+                    $number = $arr[$row];
+                }
+            }
+        }
+    }
+    echo $number;

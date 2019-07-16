@@ -1,0 +1,10 @@
+function solve(arr) {
+    let step = Number(arr.pop());
+    let result = arr.reduce((acc, el, idx) => {
+        if (idx % step === 0) {
+            acc.push(el);
+        }
+        return acc;
+    }, []);
+console.log(result.join('\n'));
+}

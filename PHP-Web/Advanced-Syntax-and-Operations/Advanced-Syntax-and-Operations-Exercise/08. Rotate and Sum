@@ -1,0 +1,23 @@
+<?php
+
+    $arr = array_map('intval', explode(' ', readline()));
+    $rotations = intval(readline());
+
+    $sum = [];
+
+    for ($i = 0; $i < count($arr); $i++) {
+
+        $sum[$i] = 0;
+
+    }
+
+    for ($i = 0; $i < $rotations; $i++) {
+        $temp = array_pop($arr);
+        array_unshift($arr, $temp);
+
+        for ($j = 0; $j < count($arr); $j++) {
+            $sum[$j] += $arr[$j];
+        }
+    }
+
+    echo join(' ', $sum);

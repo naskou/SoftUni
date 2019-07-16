@@ -1,0 +1,17 @@
+describe('Even or Odd', function () {
+    it('should return undefined if number', function () {
+        let number = 23;
+        let test = isOddOrEven(number);
+        assert.equal(test, undefined);
+    });
+    it('should return "even" if length is even', function () {
+        let str = 'Naskou';
+        let result = isOddOrEven(str);
+        assert.equal(result, 'even');
+    });
+    it('should return "odd" if length is odd', function () {
+        let str = 'Nasko';
+        let result = isOddOrEven(str);
+        assert.equal(result, 'odd');
+    });
+});

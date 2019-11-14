@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>Customer Details</legend>
+
+        <label>First Name <input type="text" placeholder="Your First Name" autofocus></label><br><br>
+        <label>Last Name <input type="text" placeholder="Your Last Name"></label><br><br>
+
+        <label> <input type="radio" name="gender">Male</label>
+        <label> <input type="radio" name="gender">Female</label>
+        <label> <input type="radio" name="gender">Other</label><br><br>
+
+        <label>Preferred contact method: Email<input type="radio" name="method"> Phone<input type="radio" name="method"></label><br><br>
+        <label>Email <input type="email" placeholder="your@email.com"></label><br><br>
+        <label>Phone <input type="text" placeholder="+359878821532"></label><br><br>
+
+        <label>Town
+            <select>
+                <option>Varna</option>
+                <option>Plovdiv</option>
+                <option>Burgas</option>
+                <option>Sofia</option>
+                <option>Pleven</option>
+            </select></label><br><br>
+
+        <label>Age <input type="number" min="18" max="70"></label><br><br>
+
+        <label>Programming language
+            <input list="languages">
+            <datalist id="languages">
+                <option value="Java"></option>
+                <option value="PHP"></option>
+                <option value="C#"></option>
+                <option value="JavaScript"></option>
+                <option value="Python"></option>
+                <option value="Ruby"></option>
+                <option value="Other"></option>
+            </datalist>
+        </label><br><br>
+
+        <label>
+            <textarea rows="5" cols="20" placeholder="More information..."></textarea>
+        </label><br><br>
+
+        <label>I agree the Terms and Conditions <input type="checkbox" value="checked"></label><br><br>
+        <label><input type="submit" value="Send"></label>
+    </fieldset>
+</form>
+</body>
+</html>
